@@ -1,0 +1,9 @@
+Opérations sous GIT en ligne de commande
+-----------------------------------------------------------------------------------------------
+git init (Initialise un répertoire pour git)
+git add remote nom_repo http://adresse_repo /*Ajoute le repo distant en tant que référence*/
+git add * /*Ajouter les fichiers au repo local*/
+git clone   /*Récupère les données du repo distant*/
+git push /*Envoie les fichiers du repo local vers le repo distant*/
+
+
