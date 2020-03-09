@@ -1,0 +1,52 @@
+/*Liste des sélecteurs*/
+
+p {
+    color: azure;
+    /* Tous les éléments de type <p> */
+}
+
+h1,
+em {
+    color: beige;
+    /* Les éléments <h1> et <em> */
+}
+
+.dessous {
+    color: bisque;
+    /* Les éléments class='dessous' */
+}
+
+#etat {
+    color: black;
+    /* Les éléments id='etat' */
+}
+
+* {
+    background-color: blueviolet;
+    /* Sélecteur universel */
+}
+
+h3 em {
+    color: brown;
+    /* Balise <em> incluse dans un <h3> */
+}
+
+h3+p {
+    color: burlywood;
+    /* Le premier <p> après un <h3> */
+}
+
+a[title] {
+    color: chartreuse;
+    /* Les balises <a> avec un attribut title = 'xxxx' */
+}
+
+a[title="click"] {
+    color: chartreuse;
+    /* Les balises <a> avec un attribut title = 'click' */
+}
+
+a[title*="click"] {
+    color: chartreuse;
+    /* Les balises <a> avec un attribut title qui contient 'click' */
+}
