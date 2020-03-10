@@ -4,6 +4,7 @@ git init (Initialise un répertoire pour git)
 git add remote nom_repo http://adresse_repo /*Ajoute le repo distant en tant que référence*/
 git add * /*Ajouter les fichiers au repo local*/
 git clone   /*Récupère les données du repo distant*/
+git commit -m 'Message de commit' /*Prend en compte les dernières modifications et crée un nouveau point de commit*/
 git push /*Envoie les fichiers du repo local vers le repo distant*/
 
 
