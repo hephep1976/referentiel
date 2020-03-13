@@ -56,10 +56,51 @@ element.addEventListener('click', function() {
     alert("Vous m'avez cliqué !");
 });
 // Différence capture / bouillonnement 
-
+/*
+Capture : L'évènement sera appliqué au(x) parent(s) AVANT de l'être à l'élément => Ca descend
+Bouillonnement : L'évènement sera appliqué au(x) parent(s) APRES de l'être à l'élément (Par défaut) => Ca remonte
+*/
 
 // Il est possible de créer plusieurs événements pour un même élément.
 element.addEventListener('click', myFunction); // On crée l'événement
 element.removeEventListener('click', myFunction); // On supprime l'événement en lui repassant les mêmes paramètres
+
+// Objet Event
+// Accessible seulement quand un événement est déclenché.
+
+//Utilisation avec DOM-0
+element.onclick = function(e) { // L'argument « e » va récupérer une référence vers l'objet « Event »
+    alert(e.type); // Ceci affiche le type de l'événement (click, mouseover, etc.)
+};
+
+//Utilisation avec DOM-2
+element.addEventListener('click', function(e) { // L'argument « e » va récupérer une référence vers l'objet « Event »
+    alert(e.type); // Ceci affiche le type de l'événement (click, mouseover, etc.)
+});
+
+// Fonctionnalités de l'objet Event
+// ==> Récupérer l'élément de l'événement déclenché.
+var clickme = document.getElementById('clickme');
+
+clickme.addEventListener('click', function(e) {
+    e.target.innerHTML = 'Vous avez cliqué !'
+});
+
+
+// ==> Récupérer l'élément à l'origine de l'événement déclenché.
+var parent1 = document.getElementById('parent1'),
+    result = document.getElementById('result');
+
+parent1.addEventListener('mouseover', function(e) {
+    result.innerHTML = "L'élément déclencheur de l'événement \"mouseover\" possède l'ID : " + e.currentTarget.id
+});
+
+
+// Récupérer la position de la souris.
+var position = document.getElementById('position');
+
+document.addEventListener('mousemove', function(e) {
+    position.innerHTML = 'Position X : ' + e.clientX + 'px<br />Position Y : ' + e.clientY + 'px'
+});
 
 
